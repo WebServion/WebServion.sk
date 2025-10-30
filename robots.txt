@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://biecool03-bot.github.io/WebServion.sk/sitemap.xml
+Sitemap: https://webservion.github.io/WebServion.sk/
