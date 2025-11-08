@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cenník | WebServion.sk</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    .pricing-section {
+      padding: 80px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #0d1117, #1c1f26);
+      color: #fff;
+    }
+
+    .pricing-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .pricing-section p {
+      font-size: 1.1rem;
+      color: #bbb;
+      margin-bottom: 50px;
+    }
+
+    .pricing-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .pricing-card {
+      background: #1f232b;
+      border: 1px solid #2e323b;
+      border-radius: 15px;
+      width: 300px;
+      padding: 30px 20px;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      border-color: #00aaff;
+      box-shadow: 0 0 15px rgba(0,170,255,0.4);
+    }
+
+    .pricing-card h2 {
+      color: #00aaff;
+      margin-bottom: 15px;
+    }
+
+    .pricing-card p {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card ul {
+      text-align: left;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 25px;
+    }
+
+    .pricing-card ul li {
+      margin: 10px 0;
+      color: #ddd;
+    }
+
+    .pricing-card .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00ff9d;
+    }
+
+    .pricing-card .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #00aaff;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .pricing-card .btn:hover {
+      background: #0088cc;
+    }
+
+    @media(max-width: 900px) {
+      .pricing-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">Web<span>Servion.sk</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Domov</a></li>
+          <li><a href="kontakt.html">O nás</a></li>
+          <li><a href="sluzby.html">Služby</a></li>
+          <li><a href="cennik.html" class="active">Cenová ponuka</a></li>
+          <li><a href="kontakt-form.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="pricing-section">
+      <h1>💰 Cenová ponuka</h1>
+      <p>Vyber si balíček, ktorý najlepšie sedí tvojmu biznisu</p>
+
+      <div class="pricing-container">
+
+        <div class="pricing-card">
+          <h2>✅ 5-stranový web</h2>
+          <p>Perfektný pre menšie firmy, ktoré chcú rýchlo zaujať online.</p>
+          <ul>
+            <li>⚡ Rýchly a moderný dizajn</li>
+            <li>📱 Responzívne zobrazenie</li>
+            <li>🛠 Základná optimalizácia SEO</li>
+            <li>💼 Cena: <span class="price">200 €</span></li>
+          </ul>
+          <a href="kontakt-form.html" class="btn">Objednať</a>
+        </div>
+
+        <div class="pricing-card">
+          <h2>🏢 10-stranový web</h2>
+          <p>Ideálne pre podniky, ktoré potrebujú viac priestoru a silnejšiu prezentáciu.</p>
+          <ul>
+            <li>🌐 Pokročilý dizajn a funkcie</li>
+            <li>📈 Lepšia viditeľnosť vo vyhľadávaní</li>
+            <li>🧭 Viac obsahu a možností</li>
+            <li>💼 Cena: <span class="price">365 €</span></li>
+          </ul>
+          <a href="kontakt-form.html" class="btn">Objednať</a>
+        </div>
+
+        <div class="pricing-card">
+          <h2>🧰 Full servis & údržba</h2>
+          <p>Tvoj web sa nikdy „nepokazí“ – všetko opravíme, aktualizujeme a udržíme funkčné.</p>
+          <ul>
+            <li>🔄 Aktualizácie a správa webu</li>
+            <li>🔐 Zálohy a bezpečnosť</li>
+            <li>📞 Technická podpora nonstop</li>
+            <li>💸 Cena: <span class="price">150–350 € / 5-stranový</span></li>
+            <li>💸 Cena: <span class="price">480–585 € / 10-stranový</span></li>
+          </ul>
+          <a href="kontakt-form.html" class="btn">Získať ponuku</a>
+        </div>
+
+      </div>
+
+      <p style="margin-top:40px; color:#ccc;">💵 Možnosť dohody na rozumnej cene 💳</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 WebServion.sk | Všetky práva vyhradené</p>
+  </footer>
+</body>
+</html>
