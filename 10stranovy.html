@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Objednávka 10-stranového webu | WebServion.sk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d1117, #1c1f26);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 80px auto;
+      background: #1f232b;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,170,255,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #00aaff;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #2e323b;
+      background: #14171d;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      background: #00aaff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #0088cc;
+    }
+
+    .success {
+      text-align: center;
+      margin-top: 20px;
+      color: #00ff9d;
+      font-weight: 600;
+    }
+
+    .error {
+      text-align: center;
+      margin-top: 20px;
+      color: #ff5050;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>📝 Objednávka 10-stranového webu</h1>
+    <form id="orderForm">
+      <label>Meno a priezvisko:</label>
+      <input type="text" id="name" placeholder="Zadajte vaše meno" required />
+
+      <label>Kontakt (telefón, Discord, IG...):</label>
+      <input type="text" id="contact" placeholder="Napíšte váš kontakt" required />
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="napr. meno@email.sk" required />
+
+      <label>O čom má byť váš web:</label>
+      <textarea id="about" placeholder="Popíšte tému alebo účel webu..." required></textarea>
+
+      <button type="submit">Odoslať objednávku</button>
+    </form>
+
+    <div id="responseMessage"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("orderForm");
+    const responseDiv = document.getElementById("responseMessage");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const contact = document.getElementById("contact").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const about = document.getElementById("about").value.trim();
+
+      if (!email.includes("@") || !email.includes(".")) {
+        responseDiv.innerHTML = "<p class='error'>❌ Neplatný e-mail.</p>";
+        return;
+      }
+
+      // sem vlož nový webhook URL
+      const webhookURL = "https://discord.com/api/webhooks/1436841487953428490/HQ_63T7K7jMi42TDYhmAPA8v3hoHbXk-NZ3xI95-ZbidAgGIV_wD0Iysg0fg_MYrt06M";
+
+      const payload = {
+        content: "**📩 Nová objednávka – 10-stranový web!**",
+        embeds: [{
+          title: "🧾 Detail objednávky",
+          color: 5814783,
+          fields: [
+            { name: "👤 Meno", value: name, inline: false },
+            { name: "📞 Kontakt", value: contact, inline: false },
+            { name: "📧 Email", value: email, inline: false },
+            { name: "💡 Téma webu", value: about, inline: false }
+          ],
+          footer: { text: "WebServion.sk – Automatická objednávka" }
+        }]
+      };
+
+      try {
+        const res = await fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok) {
+          responseDiv.innerHTML = "<p class='success'>✅ Objednávka bola úspešne odoslaná!</p>";
+          form.reset();
+        } else {
+          responseDiv.innerHTML = "<p class='error'>❌ Nepodarilo sa odoslať objednávku.</p>";
+        }
+      } catch (err) {
+        responseDiv.innerHTML = "<p class='error'>⚠️ Chyba pripojenia.</p>";
+      }
+    });
+  </script>
+</body>
+</html>
