@@ -6,11 +6,133 @@
   <title>Služby | WebServion.sk</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- NAVBAR COLORS & MENŠÍ HEADER ---------- */
+    .navbar {
+      background-color: #1f1f1f;
+      padding: 8px 0; /* menší padding */
+      position: fixed; /* fixovaný na vrchu */
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: top 0.3s; /* plynulý pohyb pri scroll */
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .navbar .logo img {
+      height: 50px; /* mierne menšie logo */
+      border-radius: 8px;
+    }
+
+    .navbar nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar nav ul li {
+      margin-left: 20px; /* trošku menšie odsadenie */
+    }
+
+    .navbar nav ul li a {
+      color: #00bfa5; /* základná zelená farba */
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar nav ul li a:hover,
+    .navbar nav ul li a.active {
+      color: #1e90ff; /* jasná modrá pri hover */
+    }
+
+    /* ---------- PAGE HEADER ---------- */
+    .page-header {
+      position: relative;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      margin-top: 66px; /* offset pre fixovaný header */
+      color: #fff;
+    }
+
+    .page-header-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .page-header-content p {
+      font-size: 1.2rem;
+    }
+
+    /* ---------- SERVICES SECTION ---------- */
+    .services.container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .service-card {
+      background-color: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 45%;
+      color: #d3d3d3;
+    }
+
+    .service-card h2 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #1f1f1f;
+      color: #777;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    @media(max-width: 800px){
+      .service-card {
+        flex: 1 1 100%;
+      }
+      .navbar nav ul {
+        flex-direction: column;
+      }
+      .navbar nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="container nav-inner">
-      <div class="logo">Web<span>Servion.sk</span></div>
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <!-- Logo vľavo -->
+      <div class="logo">
+        <img src="webservion.png" alt="WebServion Logo">
+      </div>
+
+      <!-- Menu vpravo -->
       <nav>
         <ul>
           <li><a href="index.html">Domov</a></li>
@@ -25,14 +147,13 @@
 
   <main>
     <section class="page-header">
-      <div class="overlay"></div>
       <div class="page-header-content">
         <h1>Naše služby</h1>
         <p>Kompletné riešenia pre váš úspech online</p>
       </div>
     </section>
 
-    <section class="services container" style="padding:60px 0;">
+    <section class="services container">
       <div class="service-card">
         <h2>Webové stránky</h2>
         <p>Moderné, responzívne a optimalizované weby pre malé a stredné firmy.</p>
@@ -58,5 +179,21 @@
   <footer>
     <p>© 2025 WebServion.sk | Všetky práva vyhradené</p>
   </footer>
+
+  <script>
+    // Header mizne pri scroll nadol a zobrazuje sa pri scroll nahor
+    let prevScrollpos = window.pageYOffset;
+    const navbar = document.getElementById("navbar");
+
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        navbar.style.top = "0";
+      } else {
+        navbar.style.top = "-70px"; // schová hlavičku pri scroll nadol
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
 </body>
 </html>

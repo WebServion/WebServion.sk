@@ -5,11 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebServion.sk</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ---------- NAVBAR COLORS & MENŠÍ HEADER ---------- */
+    .navbar {
+      background-color: #1f1f1f;
+      padding: 8px 0; /* menší padding */
+      position: fixed; /* fixovaný na vrchu */
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: top 0.3s; /* plynulý pohyb pri scroll */
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .navbar .logo img {
+      height: 50px; /* mierne menšie logo */
+      border-radius: 8px;
+    }
+
+    .navbar nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar nav ul li {
+      margin-left: 20px; /* trošku menšie odsadenie */
+    }
+
+    .navbar nav ul li a {
+      color: #00bfa5; /* základná zelená farba */
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar nav ul li a:hover,
+    .navbar nav ul li a.active {
+      color: #1e90ff; /* jasná modrá pri hover */
+    }
+
+    /* ---------- HERO / PAGE HEADER ---------- */
+    .hero, .page-header {
+      position: relative;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      margin-top: 66px; /* offset pre fixovaný header */
+    }
+
+    .hero .hero-content, .page-header .page-header-content {
+      color: #fff;
+      max-width: 700px;
+    }
+
+    .hero h1, .page-header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p, .page-header p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #00bfa5;
+      color: #fff;
+      padding: 12px 30px;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #009e8f;
+    }
+  </style>
 </head>
 <body>
-  <header>
+  <header class="navbar" id="navbar">
     <div class="container">
-      <h1>WebServion.sk</h1>
+      <!-- Logo vľavo -->
+      <div class="logo">
+        <img src="webservion.png" alt="WebServion Logo">
+      </div>
+
+      <!-- Menu vpravo -->
       <nav>
         <ul>
           <li><a href="index.html">Domov</a></li>
@@ -30,7 +128,6 @@
     </div>
   </section>
 
-  <!-- SEKCIA POD TLAČIDLO ZISTI VIAC -->
   <section class="info-section">
     <div class="container">
       <h2>🌐 WebServion.sk – weby, ktoré pracujú za teba!</h2>
@@ -63,5 +160,21 @@
       <p>© 2025 WebServion.sk — Všetky práva vyhradené.</p>
     </div>
   </footer>
+
+  <script>
+    // Header mizne pri scroll nadol a zobrazuje sa pri scroll nahor
+    let prevScrollpos = window.pageYOffset;
+    const navbar = document.getElementById("navbar");
+
+    window.onscroll = function() {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        navbar.style.top = "0";
+      } else {
+        navbar.style.top = "-70px"; // schová hlavičku pri scroll nadol
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  </script>
 </body>
 </html>
