@@ -1,209 +1,239 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Full servis & údržba | WebServion.sk</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full servis & údržba | WebServion.sk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d1117, #1c1f26);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0d1117, #1c1f26);
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
+    .container {
+      max-width: 700px;
+      margin: 80px auto;
+      background: #1f232b;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,170,255,0.2);
+    }
 
-.container {
-  max-width: 700px;
-  margin: 80px auto;
-  background: #1f232b;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0,170,255,0.2);
-}
+    h1 {
+      text-align: center;
+      color: #00aaff;
+      margin-bottom: 30px;
+    }
 
-h1 {
-  text-align: center;
-  color: #00aaff;
-  margin-bottom: 30px;
-}
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-/* Flex box pre ceny */
-.price-info {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  color: #ccc;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-}
+    label {
+      font-weight: 600;
+    }
 
-.price-info div strong {
-  color: #00aaff;
-}
+    input, textarea, select {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #2e323b;
+      background: #14171d;
+      color: #fff;
+      font-size: 1rem;
+    }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
 
-label {
-  font-weight: 600;
-}
+    button {
+      background: #00aaff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-input, textarea, select {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #2e323b;
-  background: #14171d;
-  color: #fff;
-  font-size: 1rem;
-}
+    button:hover {
+      background: #0088cc;
+    }
 
-textarea {
-  resize: vertical;
-  min-height: 120px;
-}
+    .success {
+      text-align: center;
+      margin-top: 20px;
+      color: #00ff9d;
+      font-weight: 600;
+    }
 
-button {
-  background: #00aaff;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+    .error {
+      text-align: center;
+      margin-top: 20px;
+      color: #ff5050;
+      font-weight: 600;
+    }
 
-button:hover {
-  background: #0088cc;
-}
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #00aaff;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
 
-.back-btn {
-  background: #555;
-  margin-top: 15px;
-}
+    .back-btn:hover {
+      color: #00ff9d;
+    }
 
-.back-btn:hover {
-  background: #333;
-}
-
-.success {
-  text-align: center;
-  margin-top: 20px;
-  color: #00ff9d;
-  font-weight: 600;
-}
-
-.error {
-  text-align: center;
-  margin-top: 20px;
-  color: #ff5050;
-  font-weight: 600;
-}
-</style>
+    .prices {
+      display: flex;
+      justify-content: space-around;
+      color: #00ff9d;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
-  <h1>🧰 Full servis & údržba</h1>
+  <div class="container">
+    <h1>🧰 Full servis & údržba</h1>
+    <form id="orderForm">
+      <label>Meno a priezvisko:</label>
+      <input type="text" id="name" placeholder="Zadajte vaše meno" required />
 
-  <div class="price-info">
-    <div>💰 <strong>5-stranový</strong> = 150–350 € / mesiac</div>
-    <div>💰 <strong>10-stranový</strong> = 480–585 € / mesiac</div>
+      <label>Kontakt (telefón, Discord, IG...):</label>
+      <input type="text" id="contact" placeholder="Napíšte váš kontakt" required />
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="napr. meno@email.sk" required />
+
+      <label>Vyberte typ webu:</label>
+      <select id="plan" required>
+        <option value="">-- Vyberte balíček --</option>
+        <option value="5-stranový">5-stranový web</option>
+        <option value="10-stranový">10-stranový web</option>
+      </select>
+
+      <div class="prices" id="priceDisplay">
+        💻 5-stranový = 150–350 €/mesiac | 🏢 10-stranový = 480–585 €/mesiac
+      </div>
+
+      <label>O čom je váš web:</label>
+      <textarea id="about" placeholder="Popíšte tému alebo účel webu..." required></textarea>
+
+      <label>Spôsob platby:</label>
+      <select id="payment" required>
+        <option value="">-- Vyberte spôsob platby --</option>
+        <option value="PayPal">PayPal</option>
+        <option value="Karta / Google Pay">Karta / Google Pay</option>
+      </select>
+
+      <button type="submit">Odoslať objednávku</button>
+    </form>
+
+    <div id="responseMessage"></div>
+    <a href="index.html" class="back-btn">← Späť na hlavnú stránku</a>
   </div>
 
-  <form id="orderForm">
-    <label>Meno a priezvisko:</label>
-    <input type="text" id="name" placeholder="Zadajte vaše meno" required />
+  <script>
+    const form = document.getElementById("orderForm");
+    const responseDiv = document.getElementById("responseMessage");
+    const planSelect = document.getElementById("plan");
+    const priceDisplay = document.getElementById("priceDisplay");
 
-    <label>Kontakt (telefón, Discord, IG...):</label>
-    <input type="text" id="contact" placeholder="Napíšte váš kontakt" required />
+    const priceMap = {
+      "5-stranový": "150–350 €/mesiac",
+      "10-stranový": "480–585 €/mesiac"
+    };
 
-    <label>Email:</label>
-    <input type="email" id="email" placeholder="napr. meno@email.sk" required />
-
-    <label>O čom má byť váš web:</label>
-    <textarea id="about" placeholder="Popíšte tému alebo účel webu..." required></textarea>
-
-    <label>Vyberte balíček:</label>
-    <select id="package" required>
-      <option value="" disabled selected>-- Vyberte --</option>
-      <option value="5-stranový">5-stranový</option>
-      <option value="10-stranový">10-stranový</option>
-    </select>
-
-    <button type="submit">Odoslať objednávku</button>
-  </form>
-
-  <button class="back-btn" onclick="window.location.href='index.html'">⬅ Späť na domov</button>
-
-  <div id="responseMessage"></div>
-</div>
-
-<script>
-const form = document.getElementById("orderForm");
-const responseDiv = document.getElementById("responseMessage");
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const contact = document.getElementById("contact").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const about = document.getElementById("about").value.trim();
-  const packageChoice = document.getElementById("package").value;
-
-  if (!email.includes("@") || !email.includes(".")) {
-    responseDiv.innerHTML = "<p class='error'>❌ Neplatný e-mail.</p>";
-    return;
-  }
-
-  if (!packageChoice) {
-    responseDiv.innerHTML = "<p class='error'>❌ Prosím vyberte balíček.</p>";
-    return;
-  }
-
-  const webhookURL = "https://discord.com/api/webhooks/1436841487953428490/HQ_63T7K7jMi42TDYhmAPA8v3hoHbXk-NZ3xI95-ZbidAgGIV_wD0Iysg0fg_MYrt06M"; // sem vlož svoj webhook
-
-  const payload = {
-    content: `**📩 Nová objednávka – Full servis & údržba!**`,
-    embeds: [{
-      title: "🧾 Detail objednávky",
-      color: 5814783,
-      fields: [
-        { name: "👤 Meno", value: name, inline: false },
-        { name: "📞 Kontakt", value: contact, inline: false },
-        { name: "📧 Email", value: email, inline: false },
-        { name: "💡 Téma webu", value: about, inline: false },
-        { name: "📦 Vybraný balíček", value: packageChoice, inline: false }
-      ],
-      footer: { text: "WebServion.sk – Automatická objednávka" }
-    }]
-  };
-
-  try {
-    const res = await fetch(webhookURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+    planSelect.addEventListener("change", () => {
+      const plan = planSelect.value;
+      if(plan === "5-stranový") {
+        priceDisplay.textContent = `💻 5-stranový = ${priceMap["5-stranový"]}`;
+      } else if(plan === "10-stranový") {
+        priceDisplay.textContent = `🏢 10-stranový = ${priceMap["10-stranový"]}`;
+      } else {
+        priceDisplay.textContent = `💻 5-stranový = ${priceMap["5-stranový"]} | 🏢 10-stranový = ${priceMap["10-stranový"]}`;
+      }
     });
 
-    if (res.ok) {
-      responseDiv.innerHTML = "<p class='success'>✅ Objednávka bola úspešne odoslaná!</p>";
-      form.reset();
-    } else {
-      responseDiv.innerHTML = "<p class='error'>❌ Nepodarilo sa odoslať objednávku.</p>";
-    }
-  } catch (err) {
-    responseDiv.innerHTML = "<p class='error'>⚠️ Chyba pripojenia.</p>";
-  }
-});
-</script>
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const contact = document.getElementById("contact").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const about = document.getElementById("about").value.trim();
+      const plan = document.getElementById("plan").value;
+      const payment = document.getElementById("payment").value;
+      const selectedPrice = priceMap[plan];
+
+      if (!email.includes("@") || !email.includes(".")) {
+        responseDiv.innerHTML = "<p class='error'>❌ Neplatný e-mail.</p>";
+        return;
+      }
+
+      if (!plan) {
+        responseDiv.innerHTML = "<p class='error'>⚠️ Vyberte typ webu.</p>";
+        return;
+      }
+
+      if (!payment) {
+        responseDiv.innerHTML = "<p class='error'>⚠️ Vyberte spôsob platby.</p>";
+        return;
+      }
+
+      const webhookURL = "https://discord.com/api/webhooks/1436841487953428490/HQ_63T7K7jMi42TDYhmAPA8v3hoHbXk-NZ3xI95-ZbidAgGIV_wD0Iysg0fg_MYrt06M";
+
+      const payload = {
+        content: `**📩 Nová objednávka – Full servis & údržba!**`,
+        embeds: [{
+          title: "🧾 Detaily objednávky",
+          color: 5814783,
+          fields: [
+            { name: "👤 Meno", value: name },
+            { name: "📞 Kontakt", value: contact },
+            { name: "📧 Email", value: email },
+            { name: "💻 Vybraný balíček", value: plan },
+            { name: "💰 Cena", value: selectedPrice },
+            { name: "💳 Spôsob platby", value: payment },
+            { name: "💡 Téma webu", value: about }
+          ],
+          footer: { text: "WebServion.sk – Automatická objednávka" }
+        }]
+      };
+
+      try {
+        const res = await fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok) {
+          responseDiv.innerHTML = "<p class='success'>✅ Objednávka bola úspešne odoslaná!</p>";
+          form.reset();
+          priceDisplay.textContent = `💻 5-stranový = ${priceMap["5-stranový"]} | 🏢 10-stranový = ${priceMap["10-stranový"]}`;
+        } else {
+          responseDiv.innerHTML = "<p class='error'>❌ Nepodarilo sa odoslať objednávku.</p>";
+        }
+      } catch (err) {
+        responseDiv.innerHTML = "<p class='error'>⚠️ Chyba pripojenia.</p>";
+      }
+    });
+  </script>
 </body>
 </html>
