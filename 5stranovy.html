@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Objednávka 5-stranového webu | WebServion.sk</title>
+
+  <!-- 🔍 SEO -->
+  <meta name="description" content="Objednajte si profesionálny 5-stranový web od WebServion.sk. Moderný dizajn, SEO optimalizácia a rýchle dodanie. Cena: 200 €." />
+  <meta name="keywords" content="tvorba webu, 5-stranový web, web stránka, WebServion, objednávka webu, dizajn, SEO, tvorba stránok" />
+  <meta name="author" content="WebServion.sk" />
+  <meta property="og:title" content="Objednávka 5-stranového webu | WebServion.sk" />
+  <meta property="og:description" content="Profesionálny 5-stranový web už za 200 €. Vyplňte objednávku a získajte moderný web pre váš projekt alebo firmu!" />
+  <meta property="og:image" content="https://yourdomain.sk/assets/preview.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.sk/5stranovy.html" />
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/841/841364.png">
+
+  <!-- 🖋️ Fonts + Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -82,6 +95,7 @@
       font-weight: 600;
     }
     .back-btn:hover { color: #0088cc; }
+    .hp { display: none; }
   </style>
 </head>
 <body>
@@ -110,6 +124,7 @@
         <option value="Google Pay">Google Pay / VISA</option>
       </select>
 
+      <input type="text" id="hp_field" class="hp" tabindex="-1" autocomplete="off" />
       <button type="submit">Odoslať objednávku</button>
     </form>
 
@@ -130,32 +145,39 @@
       const email = document.getElementById("email").value.trim();
       const about = document.getElementById("about").value.trim();
       const payment = document.getElementById("payment").value;
+      const hp = document.getElementById("hp_field").value.trim();
+
+      if (hp !== "") return;
 
       if (!email.includes("@") || !email.includes(".")) {
         responseDiv.innerHTML = "<p class='error'>❌ Neplatný e-mail.</p>";
         return;
       }
-      if (!payment) {
-        responseDiv.innerHTML = "<p class='error'>❌ Vyberte spôsob platby.</p>";
+      const hasDigit = /\d/.test(contact);
+      const hasAt = contact.includes("@");
+      if (!hasDigit && !hasAt) {
+        responseDiv.innerHTML = "<p class='error'>❌ Kontakt musí obsahovať číslo alebo @.</p>";
         return;
       }
 
-      const webhookURL = "https://discord.com/api/webhooks/1436841487953428490/HQ_63T7K7jMi42TDYhmAPA8v3hoHbXk-NZ3xI95-ZbidAgGIV_wD0Iysg0fg_MYrt06M"; // tvoj Discord webhook
+      const webhookURL = "https://discord.com/api/webhooks/1436841487953428490/HQ_63T7K7jMi42TDYhmAPA8v3hoHbXk-NZ3xI95-ZbidAgGIV_wD0Iysg0fg_MYrt06M";
 
       const payload = {
-        content: "**📩 Nová objednávka – 5-stranový web!**",
+        content: "📥 **Nová objednávka – 5️⃣-stranový web!** 🎉",
         embeds: [{
-          title: "🧾 Detail objednávky",
-          color: 5814783,
+          title: "🌐 Objednávka z WebServion.sk",
+          color: 3447003,
+          description: "🧾 **Detaily objednávky 5-stranového webu**\n────────────────────────────",
           fields: [
-            { name: "👤 Meno", value: name, inline: false },
-            { name: "📞 Kontakt", value: contact, inline: false },
-            { name: "📧 Email", value: email, inline: false },
-            { name: "💡 Téma webu", value: about, inline: false },
-            { name: "💰 Cena", value: "200 €", inline: true },
-            { name: "💳 Spôsob platby", value: payment, inline: true }
+            { name: "👤 **Meno zákazníka**", value: name, inline: false },
+            { name: "📞 **Kontakt**", value: contact, inline: false },
+            { name: "📧 **Email**", value: email, inline: false },
+            { name: "💡 **Téma webu**", value: about, inline: false },
+            { name: "💰 **Cena**", value: "200 €", inline: true },
+            { name: "💳 **Platba**", value: payment, inline: true }
           ],
-          footer: { text: "WebServion.sk – Automatická objednávka" }
+          footer: { text: "🕒 WebServion.sk | Automatická objednávka", icon_url: "https://cdn-icons-png.flaticon.com/512/841/841364.png" },
+          timestamp: new Date().toISOString()
         }]
       };
 
@@ -167,13 +189,13 @@
         });
 
         if (res.ok) {
-          responseDiv.innerHTML = "<p class='success'>✅ Objednávka bola úspešne odoslaná!</p>";
+          responseDiv.innerHTML = "<p class='success'>✅ Objednávka bola úspešne odoslaná! Čoskoro vás budeme kontaktovať 💬</p>";
           form.reset();
         } else {
           responseDiv.innerHTML = "<p class='error'>❌ Nepodarilo sa odoslať objednávku.</p>";
         }
-      } catch (err) {
-        responseDiv.innerHTML = "<p class='error'>⚠️ Chyba pripojenia.</p>";
+      } catch {
+        responseDiv.innerHTML = "<p class='error'>⚠️ Chyba pripojenia k serveru.</p>";
       }
     });
   </script>
