@@ -7,18 +7,19 @@
 }
 
 body {
-  background-color: #121212;
-  color: #d3d3d3;
+  background-color: #1c1e26; /* tmavá, ale nie čierna */
+  color: #d0d0d0;
   line-height: 1.6;
 }
 
 /* ---------- NAVBAR ---------- */
 .navbar {
-  background-color: #1f1f1f;
+  background-color: #252836;
   padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid #333;
 }
 
 .navbar .container {
@@ -30,10 +31,6 @@ body {
 .navbar .logo {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #fff;
-}
-
-.navbar .logo span {
   color: #00bfa5;
 }
 
@@ -46,9 +43,8 @@ body {
   margin-left: 25px;
 }
 
-/* --------- ZMENENÉ FARBY ODKAZOV --------- */
 .navbar nav ul li a {
-  color: #00bfa5; /* základná zelená farba */
+  color: #00bfa5; /* zelenomodrá farba */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
@@ -56,13 +52,13 @@ body {
 
 .navbar nav ul li a:hover,
 .navbar nav ul li a.active {
-  color: #1e90ff; /* jasná modrá pri hover */
+  color: #1e90ff; /* kontrastná modrá */
 }
 
 /* ---------- HERO / PAGE HEADER ---------- */
 .hero, .page-header {
   position: relative;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+  background: linear-gradient(rgba(28,30,38,0.5), rgba(28,30,38,0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
   height: 80vh;
   display: flex;
   align-items: center;
@@ -72,24 +68,26 @@ body {
 }
 
 .hero .hero-content, .page-header .page-header-content {
-  color: #fff;
+  color: #ffffff;
   max-width: 700px;
 }
 
 .hero h1, .page-header h1 {
   font-size: 3rem;
   margin-bottom: 20px;
+  color: #00bfa5; /* jasný kontrastný nadpis */
 }
 
 .hero p, .page-header p {
   font-size: 1.2rem;
   margin-bottom: 30px;
+  color: #d0d0d0;
 }
 
 .btn {
   display: inline-block;
   background-color: #00bfa5;
-  color: #fff;
+  color: #1c1e26;
   padding: 12px 30px;
   font-size: 1rem;
   border-radius: 8px;
@@ -115,7 +113,7 @@ body {
 }
 
 .intro-card, .service-card, .contact-card, .about-text {
-  background-color: #1f1f1f;
+  background-color: #252836;
   padding: 25px;
   border-radius: 12px;
   margin-bottom: 25px;
@@ -128,8 +126,9 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
-h2, h3 {
-  color: #fff;
+/* ---------- NADPISY ---------- */
+h1, h2, h3 {
+  color: #00bfa5; /* profesionálne jasné na tmavom pozadí */
   margin-bottom: 15px;
 }
 
@@ -141,36 +140,38 @@ h2, h3 {
 
 .contact-card label {
   margin: 10px 0 5px;
+  color: #ffffff;
 }
 
 .contact-card input, .contact-card textarea {
   padding: 10px;
   border: none;
   border-radius: 8px;
-  background-color: #2a2a2a;
-  color: #fff;
+  background-color: #1f212b;
+  color: #d0d0d0;
   margin-bottom: 15px;
 }
 
 .contact-card input::placeholder, .contact-card textarea::placeholder {
-  color: #aaa;
+  color: #888;
 }
 
 .contact-info {
   margin-top: 25px;
   padding: 25px;
-  background-color: #1f1f1f;
+  background-color: #252836;
   border-radius: 12px;
+  color: #ffffff;
 }
 
 /* ---------- FOOTER ---------- */
 footer {
-  background-color: #1f1f1f;
+  background-color: #252836;
   text-align: center;
   padding: 20px 0;
   margin-top: 50px;
   font-size: 0.9rem;
-  color: #777;
+  color: #aaa;
 }
 
 /* ---------- MEDIA QUERIES ---------- */

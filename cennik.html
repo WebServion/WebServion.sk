@@ -9,11 +9,24 @@
 <meta name="description" content="Pozrite si cenník tvorby webových stránok od WebServion.sk. Vyberte si 5-stranový, 10-stranový alebo full servis web za výhodnú cenu." />
 <meta name="keywords" content="cenník webstránok, WebServion, tvorba webu, 5-stranový web, 10-stranový web, full servis, cena webu, web dizajn, SEO" />
 <meta name="author" content="WebServion.sk" />
+
+<!-- OpenGraph -->
 <meta property="og:title" content="Cenník | WebServion.sk" />
 <meta property="og:description" content="Vyberte si ideálny balíček pre svoj web. Profesionálny 5-stranový, 10-stranový alebo full servis web od WebServion.sk." />
 <meta property="og:image" content="https://yourdomain.sk/assets/preview.png" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yourdomain.sk/cennik.html" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cenník | WebServion.sk">
+<meta name="twitter:description" content="Vyberte si ideálny balíček pre svoj web. Profesionálny 5-stranový, 10-stranový alebo full servis web od WebServion.sk.">
+<meta name="twitter:image" content="https://yourdomain.sk/assets/preview.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://yourdomain.sk/cennik.html">
+
+<!-- Favicon -->
 <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/841/841364.png">
 
 <!-- Fonts + Style -->
@@ -21,28 +34,54 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- Pricing Cards ---------- */
+/* ---------- Navbar ---------- */
+.navbar {
+  background-color: #1f1f1f;
+  padding: 15px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: top 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.navbar .logo img { height: 50px; }
+.navbar nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
+.navbar nav ul li { margin-left: 25px; }
+.navbar nav ul li a {
+  color: #00ff9d;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+.navbar nav ul li a:hover,
+.navbar nav ul li a.active { color: #00aaff; }
+
+body { padding-top: 80px; }
+
+/* ---------- Pricing Section ---------- */
 .pricing-section { 
   padding: 80px 0; 
   text-align: center; 
-  background: linear-gradient(135deg, #0d1117, #1c1f26); 
-  color: #fff; 
+  background:
+    linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+    url('https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg') no-repeat center center/cover;
+  color: #000; 
 } 
-.pricing-section h1 { 
-  font-size: 2.5rem; 
-  margin-bottom: 10px; 
-} 
-.pricing-section p { 
-  font-size: 1.1rem; 
-  color: #bbb; 
-  margin-bottom: 50px; 
-} 
-.pricing-container { 
-  display: flex; 
-  justify-content: center; 
-  flex-wrap: wrap; 
-  gap: 25px; 
-} 
+.pricing-section h1 { font-size: 2.5rem; margin-bottom: 10px; } 
+.pricing-section p { font-size: 1.1rem; color: #111; margin-bottom: 50px; }
+
+.pricing-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; }
 .pricing-card { 
   background: #1f232b; 
   border: 1px solid #2e323b; 
@@ -56,103 +95,16 @@
   border-color: #00aaff; 
   box-shadow: 0 0 15px rgba(0,170,255,0.4); 
 } 
-.pricing-card h2 { 
-  color: #00aaff; 
-  margin-bottom: 15px; 
-} 
-.pricing-card p { 
-  color: #ccc; 
-  line-height: 1.6; 
-  margin-bottom: 20px; 
-} 
-.pricing-card ul { 
-  text-align: left; 
-  list-style: none; 
-  padding: 0; 
-  margin-bottom: 25px; 
-} 
-.pricing-card ul li { 
-  margin: 10px 0; 
-  color: #ddd; 
-} 
-.pricing-card .price { 
-  font-size: 1.5rem; 
-  font-weight: bold; 
-  color: #00ff9d; 
-} 
-.pricing-card .btn { 
-  display: inline-block; 
-  margin-top: 15px; 
-  padding: 10px 20px; 
-  background: #00aaff; 
-  color: #fff; 
-  border-radius: 8px; 
-  text-decoration: none; 
-  font-weight: 600; 
-  transition: background 0.3s ease; 
-} 
-.pricing-card .btn:hover { 
-  background: #0088cc; 
-} 
+.pricing-card h2 { color: #00aaff; margin-bottom: 15px; } 
+.pricing-card p { color: #ccc; line-height: 1.6; margin-bottom: 20px; } 
+.pricing-card ul { text-align: left; list-style: none; padding: 0; margin-bottom: 25px; } 
+.pricing-card ul li { margin: 10px 0; color: #ddd; } 
+.pricing-card .price { font-size: 1.5rem; font-weight: bold; color: #00ff9d; } 
+.pricing-card .btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #00aaff; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s ease; } 
+.pricing-card .btn:hover { background: #0088cc; }
+
 @media(max-width: 900px) { 
-  .pricing-container { 
-    flex-direction: column; 
-    align-items: center; 
-  } 
-}
-
-/* ---------- Navbar fixný a scroll-hide ---------- */
-.navbar {
-  background-color: #1f1f1f;
-  padding: 15px 0;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transition: top 0.3s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.navbar .logo img {
-  height: 50px;
-}
-
-.navbar nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar nav ul li {
-  margin-left: 25px;
-}
-
-.navbar nav ul li a {
-  color: #00ff9d;
-  font-weight: 500;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-
-.navbar nav ul li a:hover,
-.navbar nav ul li a.active {
-  color: #00aaff;
-}
-
-body {
-  padding-top: 80px;
+  .pricing-container { flex-direction: column; align-items: center; } 
 }
 </style>
 </head>
@@ -181,7 +133,6 @@ body {
 <p>Vyber si balíček, ktorý najlepšie sedí tvojmu biznisu</p>
 
 <div class="pricing-container">
-
 <div class="pricing-card">
 <h2>✅ 5-stranový web</h2>
 <p>Perfektný pre menšie firmy, ktoré chcú rýchlo zaujať online.</p>
@@ -218,9 +169,9 @@ body {
 </ul>
 <a href="fullservice.html" class="btn">Objednať full servis</a>
 </div>
-
 </div>
-<p style="margin-top:40px; color:#ccc;">💵 Možnosť dohody na rozumnej cene 💳</p>
+
+<p style="margin-top:40px; color:#111;">💵 Možnosť dohody na rozumnej cene 💳</p>
 </section>
 </main>
 

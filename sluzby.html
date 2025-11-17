@@ -3,20 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Služby | WebServion.sk</title>
+
+  <title>Služby | Tvorba Webstránok, Dizajn & Marketing | WebServion.sk</title>
+  <meta name="description" content="WebServion.sk ponúka tvorbu moderných webov, grafický dizajn, SEO služby, marketing a kompletnú technickú podporu. Pomôžeme vám rásť online.">
+  <meta name="keywords" content="tvorba webu, webstránky, weby, grafika, dizajn, marketing, SEO, údržba webu, WebServion">
+
+  <meta property="og:title" content="Služby | WebServion.sk – Profesionálne weby & dizajn">
+  <meta property="og:description" content="Moderné webové stránky, grafický dizajn, SEO, marketing a technická podpora pre firmy aj živnostníkov.">
+  <meta property="og:image" content="https://i.ibb.co/8xJcW9Q/webservion-banner.png">
+  <meta property="og:url" content="https://webservion.sk/sluzby.html">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Služby | WebServion.sk">
+  <meta name="twitter:description" content="Profesionálne weby, grafika, SEO a marketing. Komplexné digitálne riešenia.">
+  <meta name="twitter:image" content="https://i.ibb.co/8xJcW9Q/webservion-banner.png">
+
+  <link rel="icon" type="image/png" href="webservion.png" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    /* ---------- NAVBAR COLORS & MENŠÍ HEADER ---------- */
     .navbar {
       background-color: #1f1f1f;
-      padding: 8px 0; /* menší padding */
-      position: fixed; /* fixovaný na vrchu */
+      padding: 8px 0;
+      position: fixed;
       width: 100%;
       top: 0;
       left: 0;
       z-index: 1000;
-      transition: top 0.3s; /* plynulý pohyb pri scroll */
+      transition: top 0.3s;
     }
 
     .navbar .container {
@@ -29,7 +45,7 @@
     }
 
     .navbar .logo img {
-      height: 50px; /* mierne menšie logo */
+      height: 50px;
       border-radius: 8px;
     }
 
@@ -41,11 +57,11 @@
     }
 
     .navbar nav ul li {
-      margin-left: 20px; /* trošku menšie odsadenie */
+      margin-left: 20px;
     }
 
     .navbar nav ul li a {
-      color: #00bfa5; /* základná zelená farba */
+      color: #00bfa5;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
@@ -53,21 +69,24 @@
 
     .navbar nav ul li a:hover,
     .navbar nav ul li a.active {
-      color: #1e90ff; /* jasná modrá pri hover */
+      color: #1e90ff;
     }
 
     /* ---------- PAGE HEADER ---------- */
     .page-header {
       position: relative;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      background:
+        linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)),
+        url('https://images.pexels.com/photos/12526862/pexels-photo-12526862.jpeg')
+        no-repeat center center/cover;
       height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 0 20px;
-      margin-top: 66px; /* offset pre fixovaný header */
-      color: #fff;
+      margin-top: 66px;
+      color: #000;
     }
 
     .page-header-content h1 {
@@ -79,7 +98,6 @@
       font-size: 1.2rem;
     }
 
-    /* ---------- SERVICES SECTION ---------- */
     .services.container {
       max-width: 1200px;
       margin: auto;
@@ -111,12 +129,8 @@
     }
 
     @media(max-width: 800px){
-      .service-card {
-        flex: 1 1 100%;
-      }
-      .navbar nav ul {
-        flex-direction: column;
-      }
+      .service-card { flex: 1 1 100%; }
+      .navbar nav ul { flex-direction: column; }
       .navbar nav ul li {
         margin-left: 0;
         margin-top: 10px;
@@ -125,14 +139,13 @@
   </style>
 </head>
 <body>
+
   <header class="navbar" id="navbar">
     <div class="container">
-      <!-- Logo vľavo -->
       <div class="logo">
         <img src="webservion.png" alt="WebServion Logo">
       </div>
 
-      <!-- Menu vpravo -->
       <nav>
         <ul>
           <li><a href="index.html">Domov</a></li>
@@ -146,6 +159,7 @@
   </header>
 
   <main>
+
     <section class="page-header">
       <div class="page-header-content">
         <h1>Naše služby</h1>
@@ -156,24 +170,25 @@
     <section class="services container">
       <div class="service-card">
         <h2>Webové stránky</h2>
-        <p>Moderné, responzívne a optimalizované weby pre malé a stredné firmy.</p>
+        <p>Moderné, rýchle a SEO optimalizované weby pre firmy aj jednotlivcov.</p>
       </div>
 
       <div class="service-card">
         <h2>Grafický dizajn</h2>
-        <p>Logo, vizitky, vizuálna identita – všetko pre profesionálny dojem.</p>
+        <p>Logo, branding, vizitky a profesionálna firemná identita.</p>
       </div>
 
       <div class="service-card">
         <h2>SEO a marketing</h2>
-        <p>Reklamy a sociálne siete, ktoré prinášajú klientov.</p>
+        <p>Reklamy, sociálne siete, organické SEO a strategický rast klientely.</p>
       </div>
 
       <div class="service-card">
         <h2>Podpora a údržba</h2>
-        <p>Hosting, bezpečnosť, aktualizácie a technická podpora po spustení webu.</p>
+        <p>Hosting, aktualizácie, bezpečnosť a kompletný servis po spustení webu.</p>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -181,19 +196,15 @@
   </footer>
 
   <script>
-    // Header mizne pri scroll nadol a zobrazuje sa pri scroll nahor
     let prevScrollpos = window.pageYOffset;
     const navbar = document.getElementById("navbar");
 
     window.onscroll = function() {
       let currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        navbar.style.top = "0";
-      } else {
-        navbar.style.top = "-70px"; // schová hlavičku pri scroll nadol
-      }
+      navbar.style.top = prevScrollpos > currentScrollPos ? "0" : "-70px";
       prevScrollpos = currentScrollPos;
     }
   </script>
+
 </body>
 </html>

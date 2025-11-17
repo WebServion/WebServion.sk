@@ -3,20 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>O nás | WebServion.sk</title>
+
+  <title>O nás | WebServion.sk – Tvorba Webov, Grafika & Marketing</title>
+  <meta name="description" content="Zoznámte sa s WebServion.sk – tímom kreatívnych odborníkov na tvorbu webov, grafiku, SEO a marketing. Naša misia je pomáhať firmám rásť pomocou moderných digitálnych riešení.">
+  <meta name="keywords" content="o nás, webservion, webservion.sk, kto sme, tvorba webov, grafika, web dizajn, web firmy, kreatívna agentúra, marketing, seo">
+  <meta name="author" content="WebServion.sk">
+  <link rel="canonical" href="https://webservion.sk/onas.html">
+
+  <meta property="og:title" content="O nás | WebServion.sk">
+  <meta property="og:description" content="Profesionálny tím WebServion.sk – weby, grafika, marketing a moderné riešenia pre vaše podnikanie.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://webservion.sk/onas.html">
+  <meta property="og:image" content="https://webservion.sk/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="O nás | WebServion.sk">
+  <meta name="twitter:description" content="Tvoríme moderné weby, grafiku a marketing. Spoznajte náš tím.">
+  <meta name="twitter:image" content="https://webservion.sk/og-image.jpg">
+
+  <link rel="icon" type="image/png" href="webservion.png">
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    /* ---------- NAVBAR COLORS & MENŠÍ HEADER ---------- */
     .navbar {
       background-color: #1f1f1f;
-      padding: 8px 0; /* menší padding */
-      position: fixed; /* fixovaný na vrchu */
+      padding: 8px 0;
+      position: fixed;
       width: 100%;
       top: 0;
       left: 0;
       z-index: 1000;
-      transition: top 0.3s; /* plynulý pohyb pri scroll */
+      transition: top 0.3s;
     }
 
     .navbar .container {
@@ -29,7 +47,7 @@
     }
 
     .navbar .logo img {
-      height: 50px; /* mierne menšie logo */
+      height: 50px;
       border-radius: 8px;
     }
 
@@ -41,45 +59,48 @@
     }
 
     .navbar nav ul li {
-      margin-left: 20px; /* trošku menšie odsadenie */
+      margin-left: 20px;
     }
 
     .navbar nav ul li a {
-      color: #00bfa5; /* základná zelená farba */
+      color: #00bfa5;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: 0.3s;
     }
 
     .navbar nav ul li a:hover,
     .navbar nav ul li a.active {
-      color: #1e90ff; /* jasná modrá pri hover */
+      color: #1e90ff;
     }
 
     /* ---------- PAGE HEADER ---------- */
     .page-header {
       position: relative;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+      url('https://images.unsplash.com/photo-1508830524289-0adcbe822b40?auto=format&fit=crop&w=1950&q=80')
+      no-repeat center center/cover;
       height: 60vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 0 20px;
-      margin-top: 66px; /* offset pre fixovaný header */
-      color: #fff;
+      margin-top: 66px;
+      color: #000;
     }
 
     .page-header-content h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
+      color: #000;
     }
 
     .page-header-content p {
       font-size: 1.2rem;
+      color: #222;
     }
 
-    /* ---------- ABOUT SECTION ---------- */
     .about.container {
       max-width: 1200px;
       margin: auto;
@@ -100,10 +121,6 @@
     .about-text h2 {
       margin-bottom: 10px;
       color: #fff;
-    }
-
-    .about-text p, .about-text ul li {
-      margin-bottom: 10px;
     }
 
     footer {
@@ -128,15 +145,15 @@
     }
   </style>
 </head>
+
 <body>
+
   <header class="navbar" id="navbar">
     <div class="container">
-      <!-- Logo vľavo -->
       <div class="logo">
         <img src="webservion.png" alt="WebServion Logo">
       </div>
 
-      <!-- Menu vpravo -->
       <nav>
         <ul>
           <li><a href="index.html">Domov</a></li>
@@ -150,7 +167,7 @@
   </header>
 
   <main>
-    <!-- Header -->
+
     <section class="page-header">
       <div class="page-header-content">
         <h1>O WebServion.sk</h1>
@@ -158,30 +175,23 @@
       </div>
     </section>
 
-    <!-- About / Info -->
     <section class="about container">
       <div class="about-text">
         <h2>Naša misia</h2>
-        <p>
-          WebServion.sk vzniklo s cieľom poskytovať firmám moderné webové riešenia, ktoré pomáhajú rásť. 
-          Veríme, že kvalitný web môže byť kľúčom k úspechu a dôvere klientov.
-        </p>
+        <p>WebServion.sk vzniklo s cieľom poskytovať firmám moderné webové riešenia, ktoré pomáhajú rásť.</p>
       </div>
 
       <div class="about-text">
         <h2>Naša vízia</h2>
-        <p>
-          Chceme, aby každý klient mal prístup k profesionálnemu webu, ktorý je krásny, rýchly a funkčný. 
-          Naše riešenia sú dostupné, efektívne a pripravené podporiť váš biznis.
-        </p>
+        <p>Chceme, aby každý klient mal prístup k profesionálnemu webu, ktorý je krásny, rýchly a funkčný.</p>
       </div>
 
       <div class="about-text">
         <h2>Naši zakladatelia</h2>
         <ul>
           <li>👤 Nicolas – majiteľ, web creator a riaditeľ</li>
-          <li>👤 Michal – spolumajiteľ, grafik, dizajnér a marketing / strategický rozvoj</li>
-          <li>👤 Juraj – spolumajiteľ, manažér komunikácie a zákazníckej podpory</li>
+          <li>👤 Michal – spolumajiteľ, grafik, dizajnér a marketing</li>
+          <li>👤 Juraj – manažér komunikácie & zákazníckej podpory</li>
         </ul>
       </div>
 
@@ -191,9 +201,10 @@
         <p>📧 Nicolas: webservionsk@gmail.com</p>
         <p>📞 Michal: 0902 095 072</p>
         <p>📧 Michal: michalluscik204@gmail.com</p>
-        <p>Adresa: Kremnica</p>
+        <p>📍 Adresa: Kremnica</p>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -201,19 +212,15 @@
   </footer>
 
   <script>
-    // Header mizne pri scroll nadol a zobrazuje sa pri scroll nahor
     let prevScrollpos = window.pageYOffset;
     const navbar = document.getElementById("navbar");
 
     window.onscroll = function() {
       let currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        navbar.style.top = "0";
-      } else {
-        navbar.style.top = "-70px"; // schová hlavičku pri scroll nadol
-      }
+      navbar.style.top = prevScrollpos > currentScrollPos ? "0" : "-70px";
       prevScrollpos = currentScrollPos;
     }
   </script>
+
 </body>
 </html>

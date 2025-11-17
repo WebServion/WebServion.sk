@@ -3,12 +3,58 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kontakt | WebServion.sk</title>
+
+<!-- 🔥 SEO HLAVIČKA -->
+<title>Kontakt | WebServion.sk – Tvorba Webov & Grafika</title>
+<meta name="description" content="Kontaktujte WebServion.sk a nechajte si vytvoriť profesionálny web, logo, grafiku alebo kompletný branding. Odpovedáme rýchlo.">
+<meta name="keywords" content="kontakt webservion, webservion kontakt, web dizajn, tvorba webov, webové stránky, grafický dizajn, seo optimalizácia, lacné weby">
+<meta name="author" content="WebServion.sk">
+<link rel="canonical" href="https://webservion.sk/kontakt-form.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Kontaktujte nás | WebServion.sk">
+<meta property="og:description" content="Profesionálne weby, grafika, SEO a marketing. Napíšte nám a vytvoríme web na mieru.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://webservion.sk/kontakt-form.html">
+<meta property="og:image" content="https://webservion.sk/og-image.jpg">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kontakt | WebServion.sk">
+<meta name="twitter:description" content="Chceš web? Logo? SEO? Kontaktuj nás.">
+<meta name="twitter:image" content="https://webservion.sk/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="webservion.png">
+
+<!-- JSON-LD – Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebDesignService",
+  "name": "WebServion.sk",
+  "url": "https://webservion.sk",
+  "logo": "https://webservion.sk/webservion.png",
+  "image": "https://webservion.sk/og-image.jpg",
+  "description": "Profesionálna tvorba webových stránok, grafika, SEO, reklamy a online marketing.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kremnica",
+    "addressCountry": "SK"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+421 917 558 301",
+    "contactType": "customer support"
+  }
+}
+</script>
+
 <link rel="stylesheet" href="style.css" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- Navbar fixný a scroll-hide ---------- */
+/* ---------- Navbar ---------- */
 .navbar {
   background-color: #1f1f1f;
   padding: 15px 0;
@@ -30,37 +76,29 @@
   padding: 0 20px;
 }
 
-.navbar .logo img {
-  height: 50px;
-}
+.navbar .logo img { height: 50px; }
+.navbar nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
+.navbar nav ul li { margin-left: 25px; }
+.navbar nav ul li a { color: #00ff9d; font-weight: 500; text-decoration: none; font-size: 1rem; transition: color 0.3s; }
+.navbar nav ul li a:hover, .navbar nav ul li a.active { color: #00aaff; }
 
-.navbar nav ul {
+body { padding-top: 80px; }
+
+/* ---------- Page Header (Kontakt) ---------- */
+.page-header {
+  position: relative;
+  background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+  url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1950&h=650&dpr=2') no-repeat center center/cover;
+  height: 60vh;
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
 }
 
-.navbar nav ul li {
-  margin-left: 25px;
-}
-
-.navbar nav ul li a {
-  color: #00ff9d;
-  font-weight: 500;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-
-.navbar nav ul li a:hover,
-.navbar nav ul li a.active {
-  color: #00aaff;
-}
-
-body {
-  padding-top: 80px;
-}
+.page-header h1 { font-size: 2.5rem; }
+.page-header p { font-size: 1.2rem; }
 
 /* ---------- Contact Form ---------- */
 .contact-card form {
@@ -68,11 +106,7 @@ body {
   flex-direction: column;
 }
 
-.contact-card label {
-  margin: 10px 0 5px;
-  color: #fff;
-}
-
+.contact-card label { margin: 10px 0 5px; color: #fff; }
 .contact-card input, .contact-card textarea {
   padding: 10px;
   border: none;
@@ -81,11 +115,6 @@ body {
   color: #fff;
   margin-bottom: 15px;
 }
-
-.contact-card input::placeholder, .contact-card textarea::placeholder {
-  color: #aaa;
-}
-
 .contact-card .btn {
   display: inline-block;
   background-color: #00aaff;
@@ -98,48 +127,11 @@ body {
   transition: background 0.3s;
 }
 
-.contact-card .btn:hover {
-  background-color: #0088cc;
-}
+.contact-info { margin-top: 40px; color: #fff; }
 
-.contact-info {
-  margin-top: 25px;
-  padding: 25px;
-  background-color: #1f1f1f;
-  border-radius: 12px;
-  color: #d3d3d3;
-}
-
-/* ---------- Page Header ---------- */
-.page-header {
-  position: relative;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.page-header .page-header-content {
-  color: #fff;
-}
-
-.page-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.page-header p {
-  font-size: 1.2rem;
-}
-
-/* ---------- Footer ---------- */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #1f1f1f;
-  color: #777;
+@media(max-width: 900px){
+  .navbar nav ul { flex-direction: column; }
+  .navbar nav ul li { margin-left: 0; margin-top: 10px; }
 }
 </style>
 </head>
@@ -165,7 +157,6 @@ footer {
 
 <main>
 <section class="page-header">
-  <div class="overlay"></div>
   <div class="page-header-content">
     <h1>Kontaktujte nás</h1>
     <p>Napíšte nám a pripravíme pre vás profesionálny web</p>
@@ -177,13 +168,13 @@ footer {
     <h2>Kontaktujte nás</h2>
     <form id="contactForm">
       <label for="name">Meno</label>
-      <input type="text" id="name" name="name" placeholder="Tvoj Instagram/Facebook/iný kontakt!" required>
+      <input type="text" id="name" placeholder="Instagram/Facebook/iný kontakt" required>
 
       <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" placeholder="tvoj@email.sk/.com" required>
+      <input type="email" id="email" placeholder="tvoj@email.sk" required>
 
       <label for="message">Správa</label>
-      <textarea id="message" name="message" rows="6" placeholder="O čom chceš hovoriť? Čo si si vybral?" required></textarea>
+      <textarea id="message" rows="6" placeholder="O čom chceš hovoriť?" required></textarea>
 
       <button type="submit" class="btn">Odoslať správu</button>
       <p id="formStatus" style="margin-top:15px;"></p>
@@ -196,7 +187,7 @@ footer {
     <p>📧 Nicolas: webservionsk@gmail.com</p>
     <p>👤 Michal – spolumajiteľ: 0902 095 072</p>
     <p>📧 Michal: michalluscik204@gmail.com</p>
-    <p>Adresa: Kremnica</p>
+    <p>📍 Adresa: Kremnica</p>
   </div>
 </section>
 </main>
@@ -210,17 +201,12 @@ let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   let currentScrollPos = window.pageYOffset;
   const navbar = document.getElementById("navbar");
-  if (prevScrollpos > currentScrollPos) {
-    navbar.style.top = "0";
-  } else {
-    navbar.style.top = "-80px";
-  }
+  navbar.style.top = prevScrollpos > currentScrollPos ? "0" : "-80px";
   prevScrollpos = currentScrollPos;
 };
 
 document.getElementById("contactForm").addEventListener("submit", async function(e) {
   e.preventDefault();
-
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
@@ -228,13 +214,22 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
   if(!name || !email || !message){
     status.style.color = "red";
-    status.textContent = "Vyplň všetky polia, prosím.";
+    status.textContent = "Vyplň všetky polia.";
     return;
   }
 
   const webhookURL = "https://discord.com/api/webhooks/1427353886863396896/D0KDnyF_paSfArhKFgCaWKfHn6c1qrlcu1u0clHdYbkMtRUHO4Ih5LO1B6ME0z6an-e_";
+
   const payload = {
-    content: `📩 **Nová správa z WebServion.sk webu:**\n👤 Meno: ${name}\n📧 Email: ${email}\n💬 Správa: ${message}`
+    content:
+`📩 **NOVÁ SPRÁVA Z KONTAKTNÉHO FORMULÁRA!**
+━━━━━━━━━━━━━━━━━━
+👤 **Meno / Kontakt:** ${name}
+📧 **Email:** ${email}
+💬 **Správa:**
+> ${message}
+━━━━━━━━━━━━━━━━━━
+🌐 Odoslané z: WebServion.sk`
   };
 
   try {
@@ -243,16 +238,16 @@ document.getElementById("contactForm").addEventListener("submit", async function
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
+
     if(response.ok){
       status.style.color = "green";
       status.textContent = "Správa odoslaná! Ďakujeme.";
       document.getElementById("contactForm").reset();
-    } else {
-      throw new Error("Chyba pri odosielaní");
-    }
+    } else { throw new Error(); }
+
   } catch(err){
     status.style.color = "red";
-    status.textContent = "Nepodarilo sa odoslať správu. Skús znova.";
+    status.textContent = "Chyba pri odosielaní, skús znovu.";
   }
 });
 </script>
