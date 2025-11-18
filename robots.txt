@@ -1,4 +1,17 @@
-User-agent: *
-Allow: /
+# Sitemap URL
+Sitemap: https://webservion.github.io/WebServion.sk/sitemap.xml
 
-Sitemap: https://webservion.github.io/WebServion.sk/
+# Všetky roboti môžu pristupovať ku všetkým stránkam
+User-agent: *
+Disallow:
+
+# Príklad pre Googlebot (ak by si chcel špeciálne pravidlá)
+# User-agent: Googlebot
+# Disallow: /private/
+# Allow: /
+
+# Blokovanie spam botov alebo zlých crawlerov (voliteľné)
+# User-agent: BadBot
+# Disallow: /
+
+# Všetky ostatné boty môžu indexovať celú stránku

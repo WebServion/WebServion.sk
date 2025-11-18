@@ -5,177 +5,198 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Full servis & údržba | WebServion.sk</title>
 
-  <!-- SEO Meta -->
-  <meta name="description" content="Objednajte si profesionálny web – Full servis & údržba od WebServion.sk. 5-stranový alebo 10-stranový web s moderným dizajnom a SEO optimalizáciou.">
-  <meta name="keywords" content="web, tvorba webu, údržba webu, full servis, SEO, WebServion, webservion">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.webservion.sk/full-servis-udrzba.html">
+  <!-- SEO -->
+  <meta name="description" content="Objednajte si profesionálny web – Full servis & údržba od WebServion.sk. 5-stranový alebo 10-stranový web s moderným dizajnom a SEO optimalizáciou." />
+  <meta name="keywords" content="web, tvorba webu, údržba webu, full servis, SEO, WebServion" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.webservion.sk/full-servis-udrzba.html" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Full servis & údržba | WebServion.sk">
-  <meta property="og:description" content="Objednajte si profesionálny web od WebServion.sk – 5-stranový alebo 10-stranový web s moderným dizajnom.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.webservion.sk/full-servis-udrzba.html">
-  <meta property="og:image" content="https://www.webservion.sk/images/preview.png">
+  <!-- OG / Twitter -->
+  <meta property="og:title" content="Full servis & údržba | WebServion.sk" />
+  <meta property="og:description" content="Full servis & údržba webov – tvorba 5-stranových a 10-stranových webov s moderným dizajnom a SEO optimalizáciou." />
+  <meta property="og:image" content="https://webservion.github.io/WebServion.sk/webservion.png" />
+  <meta property="og:url" content="https://www.webservion.sk/full-servis-udrzba.html" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Full servis & údržba | WebServion.sk">
-  <meta name="twitter:description" content="Objednajte si profesionálny web od WebServion.sk – 5-stranový alebo 10-stranový web s moderným dizajnom.">
-  <meta name="twitter:image" content="https://www.webservion.sk/images/preview.png">
-
-  <!-- Structured Data JSON-LD -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "WebServion.sk",
-    "url": "https://www.webservion.sk/",
-    "logo": "https://www.webservion.sk/images/logo.png",
-    "description": "Full servis & údržba webov – tvorba 5-stranových a 10-stranových webov s moderným dizajnom a SEO optimalizáciou.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+421900000000",
-      "contactType": "customer service",
-      "email": "info@webservion.sk"
-    },
-    "sameAs": [
-      "https://www.facebook.com/webservion",
-      "https://www.instagram.com/webservion",
-      "https://www.linkedin.com/company/webservion"
-    ]
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"WebServion.sk - Full servis & údržba",
+    "url":"https://www.webservion.sk/full-servis-udrzba.html",
+    "logo":"https://webservion.github.io/WebServion.sk/webservion.png",
+    "description":"Full servis & údržba webu – správa, zálohy, aktualizácie a marketing."
   }
   </script>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
   <style>
-    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #0d1117, #1c1f26); color: #fff; margin:0; padding:0;}
-    .container { max-width:700px; margin:80px auto; background:#1f232b; padding:40px; border-radius:15px; box-shadow:0 0 15px rgba(0,170,255,0.2);}
-    h1 { text-align:center; color:#00aaff; margin-bottom:30px; }
-    form { display:flex; flex-direction:column; gap:20px;}
-    label { font-weight:600; }
-    input, textarea, select { padding:12px; border-radius:8px; border:1px solid #2e323b; background:#14171d; color:#fff; font-size:1rem; }
-    textarea { resize:vertical; min-height:120px;}
-    button { background:#00aaff; color:#fff; border:none; border-radius:8px; padding:12px; font-size:1rem; font-weight:600; cursor:pointer; transition:background 0.3s;}
-    button:hover { background:#0088cc; }
-    .success { text-align:center; margin-top:20px; color:#00ff9d; font-weight:600; }
-    .error { text-align:center; margin-top:20px; color:#ff5050; font-weight:600; }
-    .back-btn { display:block; text-align:center; margin-top:30px; text-decoration:none; color:#00aaff; font-weight:600; transition:color 0.3s; }
-    .back-btn:hover { color:#00ff9d; }
-    .prices { display:flex; justify-content:space-around; color:#00ff9d; margin-top:10px; font-weight:600; }
+    .navbar{background:#1f1f1f;padding:8px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 2px 6px rgba(0,0,0,0.3);transition:top .3s;}
+    .navbar .container{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 20px;}
+    .navbar .logo img{height:50px;border-radius:8px;}
+    .navbar nav ul{display:flex;list-style:none;margin:0;padding:0;}
+    .navbar nav ul li{margin-left:20px;}
+    .navbar nav ul li a{color:#00bfa5;text-decoration:none;font-weight:500;transition:color .3s;font-size:1rem;}
+    body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0d1117,#1c1f26);color:#fff;margin:0;padding-top:66px;}
+    .container-box{max-width:700px;margin:80px auto;background:#1f232b;padding:40px;border-radius:15px;box-shadow:0 0 15px rgba(0,170,255,0.12);}
+    h1{text-align:center;color:#00aaff;margin-bottom:20px;}
+    form{display:flex;flex-direction:column;gap:18px;}
+    label{font-weight:600;}
+    input,textarea,select{padding:12px;border-radius:8px;border:1px solid #2e323b;background:#14171d;color:#fff;font-size:1rem;}
+    textarea{min-height:120px;resize:vertical;}
+    button{background:#00aaff;color:#fff;border:none;border-radius:8px;padding:12px;font-weight:600;cursor:pointer;}
+    .success{color:#00ff9d;text-align:center;font-weight:700;margin-top:16px;}
+    .error{color:#ff5050;text-align:center;font-weight:700;margin-top:16px;}
+    .back-btn{display:block;text-align:center;margin-top:22px;color:#00aaff;text-decoration:none;font-weight:600;}
+    .prices{display:flex;justify-content:space-around;color:#00ff9d;margin-top:10px;font-weight:600;}
+    .hp{display:none;}
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>🧰 Full servis & údržba</h1>
-    <form id="orderForm">
-      <label>Meno a priezvisko:</label>
-      <input type="text" id="name" placeholder="Zadajte vaše meno" required />
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="https://webservion.github.io/WebServion.sk/webservion.png" alt="WebServion Logo"></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Domov</a></li>
+          <li><a href="zistitviac.html">Zisti viac</a></li>
+          <li><a href="sluzby.html">Služby</a></li>
+          <li><a href="cennik.html">Cenník</a></li>
+          <li><a href="kontakt-form.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <label>Kontakt (telefón, Discord, IG...):</label>
-      <input type="text" id="contact" placeholder="Napíšte váš kontakt" required />
+  <main>
+    <div class="container-box">
+      <h1>🧰 Full servis & údržba</h1>
 
-      <label>Email:</label>
-      <input type="email" id="email" placeholder="napr. meno@email.sk" required />
+      <form id="orderForm">
+        <label>Meno a priezvisko:</label>
+        <input type="text" id="name" placeholder="Zadajte vaše meno" required />
 
-      <label>Vyberte typ webu:</label>
-      <select id="plan" required>
-        <option value="">-- Vyberte balíček --</option>
-        <option value="5-stranový">5-stranový web</option>
-        <option value="10-stranový">10-stranový web</option>
-      </select>
+        <label>Kontakt (telefón, Discord, IG...):</label>
+        <input type="text" id="contact" placeholder="Napíšte váš kontakt" required />
 
-      <div class="prices" id="priceDisplay">
-        💻 5-stranový = 150–350 €/mesiac | 🏢 10-stranový = 480–585 €/mesiac
-      </div>
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="napr. meno@email.sk" required />
 
-      <label>O čom je váš web:</label>
-      <textarea id="about" placeholder="Popíšte tému alebo účel webu..." required></textarea>
+        <label>Vyberte typ webu:</label>
+        <select id="plan" required>
+          <option value="">-- Vyberte balíček --</option>
+          <option value="5-stranový">5-stranový web</option>
+          <option value="10-stranový">10-stranový web</option>
+        </select>
 
-      <label>Spôsob platby:</label>
-      <select id="payment" required>
-        <option value="">-- Vyberte spôsob platby --</option>
-        <option value="PayPal">PayPal</option>
-        <option value="Karta / Google Pay">Karta / Google Pay</option>
-      </select>
+        <div class="prices" id="priceDisplay"> 💻 5-stranový = 150–350 €/mesiac | 🏢 10-stranový = 480–585 €/mesiac </div>
 
-      <button type="submit">Odoslať objednávku</button>
-    </form>
+        <label>O čom je váš web:</label>
+        <textarea id="about" placeholder="Popíšte tému alebo účel webu..." required></textarea>
 
-    <div id="responseMessage"></div>
-    <a href="index.html" class="back-btn">← Späť na hlavnú stránku</a>
-  </div>
+        <label>Spôsob platby:</label>
+        <select id="payment" required>
+          <option value="">-- Vyberte spôsob platby --</option>
+          <option value="PayPal">PayPal</option>
+          <option value="Karta / Google Pay">Karta / Google Pay</option>
+        </select>
+
+        <input type="text" id="hp_field" class="hp" tabindex="-1" autocomplete="off" />
+        <button type="submit">Odoslať objednávku</button>
+      </form>
+
+      <div id="responseMessage"></div>
+      <a href="index.html" class="back-btn">← Späť na hlavnú stránku</a>
+    </div>
+  </main>
+
+  <footer style="text-align:center;padding:30px 0;color:#777;">© 2025 WebServion.sk | Všetky práva vyhradené</footer>
 
   <script>
-    const form = document.getElementById("orderForm");
-    const responseDiv = document.getElementById("responseMessage");
-    const planSelect = document.getElementById("plan");
-    const priceDisplay = document.getElementById("priceDisplay");
+    (function(){
+      let prev = window.pageYOffset;
+      const nav = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        const cur = window.pageYOffset;
+        nav.style.top = (prev > cur) ? '0' : '-70px';
+        prev = cur;
+      });
+    })();
 
-    const priceMap = { "5-stranový": "150–350 €/mesiac", "10-stranový": "480–585 €/mesiac" };
+    (function(){
+      const form = document.getElementById('orderForm');
+      const responseDiv = document.getElementById('responseMessage');
+      const planSelect = document.getElementById('plan');
+      const priceDisplay = document.getElementById('priceDisplay');
+      const priceMap = { "5-stranový": "150–350 €/mesiac", "10-stranový": "480–585 €/mesiac" };
 
-    planSelect.addEventListener("change", () => {
-      const plan = planSelect.value;
-      if(plan) {
-        priceDisplay.textContent = `${plan === "5-stranový" ? "💻 5-stranový" : "🏢 10-stranový"} = ${priceMap[plan]}`;
-      } else {
-        priceDisplay.textContent = `💻 5-stranový = ${priceMap["5-stranový"]} | 🏢 10-stranový = ${priceMap["10-stranový"]}`;
-      }
-    });
+      // update price display
+      planSelect.addEventListener('change', () => {
+        const plan = planSelect.value;
+        if(plan) {
+          priceDisplay.textContent = (plan === "5-stranový" ? "💻 5-stranový = " : "🏢 10-stranový = ") + priceMap[plan];
+        } else {
+          priceDisplay.textContent = "💻 5-stranový = " + priceMap["5-stranový"] + " | 🏢 10-stranový = " + priceMap["10-stranový"];
+        }
+      });
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const contact = document.getElementById('contact').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const about = document.getElementById('about').value.trim();
+        const plan = document.getElementById('plan').value;
+        const payment = document.getElementById('payment').value;
+        const hp = document.getElementById('hp_field').value.trim();
+        if (hp !== "") return;
+        if (!email.includes('@') || !email.includes('.')) { responseDiv.innerHTML = "<p class='error'>❌ Neplatný e-mail.</p>"; return; }
+        if (!plan) { responseDiv.innerHTML = "<p class='error'>⚠️ Vyberte typ webu.</p>"; return; }
+        if (!payment) { responseDiv.innerHTML = "<p class='error'>⚠️ Vyberte spôsob platby.</p>"; return; }
 
-      const name = document.getElementById("name").value.trim();
-      const contact = document.getElementById("contact").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const about = document.getElementById("about").value.trim();
-      const plan = document.getElementById("plan").value;
-      const payment = document.getElementById("payment").value;
-      const selectedPrice = priceMap[plan];
+        const webhookURL = "https://discord.com/api/webhooks/1436841487953428490/HQ_63T7K7jMi42TDYhmAPA8v3hoHbXk-NZ3xI95-ZbidAgGIV_wD0Iysg0fg_MYrt06M";
+        const selectedPrice = priceMap[plan];
 
-      if (!email.includes("@") || !email.includes(".")) { responseDiv.innerHTML = "<p class='error'>❌ Neplatný e-mail.</p>"; return; }
-      if (!plan) { responseDiv.innerHTML = "<p class='error'>⚠️ Vyberte typ webu.</p>"; return; }
-      if (!payment) { responseDiv.innerHTML = "<p class='error'>⚠️ Vyberte spôsob platby.</p>"; return; }
+        const payload = {
+          content: "📬 **Nová objednávka – Full servis & údržba!**",
+          embeds: [{
+            title: "🧾 Detaily objednávky",
+            description: "Nová objednávka bola odoslaná cez web. Skontrolujte si detaily.",
+            color: plan === "5-stranový" ? 3447003 : 3066993,
+            fields: [
+              { name: "👤 Meno a priezvisko", value: name || "-", inline: true },
+              { name: "📞 Kontakt", value: contact || "-", inline: true },
+              { name: "📧 Email", value: email || "-", inline: true },
+              { name: "💻 Balíček", value: plan || "-", inline: true },
+              { name: "💰 Cena", value: selectedPrice || "-", inline: true },
+              { name: "💳 Platba", value: payment || "-", inline: true },
+              { name: "💡 Téma webu", value: about || "-", inline: false }
+            ],
+            footer: { text: "WebServion.sk – Automatická objednávka", icon_url: "https://webservion.github.io/WebServion.sk/webservion.png" },
+            timestamp: new Date().toISOString()
+          }]
+        };
 
-      const webhookURL = "https://discord.com/api/webhooks/1436841487953428490/HQ_63T7K7jMi42TDYhmAPA8v3hoHbXk-NZ3xI95-ZbidAgGIV_wD0Iysg0fg_MYrt06M";
-
-      const payload = {
-        content: `📬 **Nová objednávka – Full servis & údržba!**`,
-        embeds: [{
-          title: "🧾 Detaily objednávky",
-          description: `Nová objednávka bola odoslaná cez web. Skontrolujte si detaily a pripravte sa na kontaktovanie klienta.`,
-          color: plan === "5-stranový" ? 3447003 : 3066993,
-          fields: [
-            { name: "👤 Meno a priezvisko", value: name || "-", inline: true },
-            { name: "📞 Kontakt", value: contact || "-", inline: true },
-            { name: "📧 Email", value: email || "-", inline: true },
-            { name: "💻 Balíček", value: plan || "-", inline: true },
-            { name: "💰 Cena", value: selectedPrice || "-", inline: true },
-            { name: "💳 Platba", value: payment || "-", inline: true },
-            { name: "💡 Téma webu", value: about || "-", inline: false }
-          ],
-          footer: {
-            text: "WebServion.sk – Automatická objednávka",
-            icon_url: "https://www.webservion.sk/favicon.ico"
-          },
-          timestamp: new Date().toISOString()
-        }]
-      };
-
-      try {
-        const res = await fetch(webhookURL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-        if (res.ok) {
-          responseDiv.innerHTML = "<p class='success'>✅ Objednávka bola úspešne odoslaná!</p>";
-          form.reset();
-          priceDisplay.textContent = `💻 5-stranový = ${priceMap["5-stranový"]} | 🏢 10-stranový = ${priceMap["10-stranový"]}`;
-        } else { responseDiv.innerHTML = "<p class='error'>❌ Nepodarilo sa odoslať objednávku.</p>"; }
-      } catch (err) {
-        responseDiv.innerHTML = "<p class='error'>⚠️ Chyba pripojenia.</p>";
-      }
-    });
+        try {
+          const res = await fetch(webhookURL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          if (res.ok) {
+            responseDiv.innerHTML = "<p class='success'>✅ Objednávka bola úspešne odoslaná!</p>";
+            form.reset();
+            priceDisplay.textContent = "💻 5-stranový = " + priceMap["5-stranový"] + " | 🏢 10-stranový = " + priceMap["10-stranový"];
+          } else {
+            responseDiv.innerHTML = "<p class='error'>❌ Nepodarilo sa odoslať objednávku.</p>";
+          }
+        } catch (err) {
+          responseDiv.innerHTML = "<p class='error'>⚠️ Chyba pripojenia.</p>";
+        }
+      });
+    })();
   </script>
 </body>
 </html>
