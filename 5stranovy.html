@@ -35,12 +35,10 @@
   }
   </script>
 
-  <!-- Fonts + style link -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* navbar = rovnaký ako index.html */
     .navbar{background:#1f1f1f;padding:8px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 2px 6px rgba(0,0,0,0.3);transition:top .3s;}
     .navbar .container{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 20px;}
     .navbar .logo img{height:50px;border-radius:8px;}
@@ -49,13 +47,12 @@
     .navbar nav ul li a{color:#00bfa5;text-decoration:none;font-weight:500;transition:color .3s;font-size:1rem;}
     .navbar nav ul li a:hover,.navbar nav ul li a.active{color:#1e90ff;}
 
-    /* page */
     body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#0d1117,#1c1f26);color:#fff;margin:0;padding-top:66px;}
     .container-box{max-width:700px;margin:80px auto;background:#1f232b;padding:40px;border-radius:15px;box-shadow:0 0 15px rgba(0,170,255,0.12);}
     h1{text-align:center;color:#00aaff;margin-bottom:20px;}
     form{display:flex;flex-direction:column;gap:18px;}
     label{font-weight:600;}
-    input,textarea,select{padding:12px;border-radius:8px;border:1px solid #2e323b;background:#14171d;color:#fff;font-size:1rem;}
+    input,textarea{padding:12px;border-radius:8px;border:1px solid #2e323b;background:#14171d;color:#fff;font-size:1rem;}
     textarea{min-height:120px;resize:vertical;}
     button{background:#00aaff;color:#fff;border:none;border-radius:8px;padding:12px;font-weight:600;cursor:pointer;}
     .price-info{text-align:center;color:#00ff9d;margin-bottom:10px;font-weight:600;}
@@ -84,7 +81,7 @@
   <main>
     <div class="container-box">
       <h1>📝 Objednávka 5-stranového webu</h1>
-      <p class="price-info">Cena: 200 € / platba podľa výberu</p>
+      <p class="price-info">Cena: 200 €</p>
 
       <form id="orderForm">
         <label>Meno a priezvisko:</label>
@@ -99,13 +96,7 @@
         <label>O čom má byť váš web:</label>
         <textarea id="about" placeholder="Popíšte tému alebo účel webu..." required></textarea>
 
-        <label>Spôsob platby:</label>
-        <select id="payment" required>
-          <option value="">Vyberte spôsob platby</option>
-          <option value="PayPal">PayPal</option>
-          <option value="Google Pay">Google Pay / VISA</option>
-        </select>
-
+        <!-- honeypot -->
         <input type="text" id="hp_field" class="hp" tabindex="-1" autocomplete="off" />
 
         <button type="submit">Odoslať objednávku</button>
@@ -119,7 +110,6 @@
   <footer style="text-align:center;padding:30px 0;color:#777;">© 2025 WebServion.sk | Všetky práva vyhradené</footer>
 
   <script>
-    // navbar hide on scroll (like index)
     (function(){
       let prev = window.pageYOffset;
       const nav = document.getElementById('navbar');
@@ -130,25 +120,36 @@
       });
     })();
 
-    // form submit -> Discord webhook
     (function(){
       const form = document.getElementById('orderForm');
       const responseDiv = document.getElementById('responseMessage');
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
         const name = document.getElementById('name').value.trim();
         const contact = document.getElementById('contact').value.trim();
         const email = document.getElementById('email').value.trim();
         const about = document.getElementById('about').value.trim();
-        const payment = document.getElementById('payment').value;
         const hp = document.getElementById('hp_field').value.trim();
-        if (hp !== "") return; // honeypot
-        if (!email.includes('@') || !email.includes('.')) { responseDiv.innerHTML = "<p class='error'>❌ Neplatný e-mail.</p>"; return; }
+
+        if (hp !== "") return;
+
+        if (!email.includes('@') || !email.includes('.')) {
+          responseDiv.innerHTML = "<p class='error'>❌ Neplatný e-mail.</p>";
+          return;
+        }
+
         const hasDigit = /\d/.test(contact);
         const hasAt = contact.includes('@');
-        if (!hasDigit && !hasAt) { responseDiv.innerHTML = "<p class='error'>❌ Kontakt musí obsahovať číslo alebo @.</p>"; return; }
 
-        const webhookURL = "https://discord.com/api/webhooks/1436841487953428490/HQ_63T7K7jMi42TDYhmAPA8v3hoHbXk-NZ3xI95-ZbidAgGIV_wD0Iysg0fg_MYrt06M";
+        if (!hasDigit && !hasAt) {
+          responseDiv.innerHTML = "<p class='error'>❌ Kontakt musí obsahovať číslo alebo @.</p>";
+          return;
+        }
+
+        const webhookURL =
+          "https://discord.com/api/webhooks/1436841487953428490/HQ_63T7K7jMi42TDYhmAPA8v3hoHbXk-NZ3xI95-ZbidAgGIV_wD0Iysg0fg_MYrt06M";
 
         const payload = {
           content: "📥 **Nová objednávka – 5️⃣-stranový web!** 🎉",
@@ -160,10 +161,12 @@
               { name: "📞 Kontakt", value: contact || "-", inline: false },
               { name: "📧 Email", value: email || "-", inline: false },
               { name: "💡 Téma webu", value: about || "-", inline: false },
-              { name: "💰 Cena", value: "200 €", inline: true },
-              { name: "💳 Platba", value: payment || "-", inline: true }
+              { name: "💰 Cena", value: "200 €", inline: true }
             ],
-            footer: { text: "🕒 WebServion.sk | Automatická objednávka", icon_url: "https://webservion.github.io/WebServion.sk/webservion.png" },
+            footer: {
+              text: "🕒 WebServion.sk | Automatická objednávka",
+              icon_url: "https://webservion.github.io/WebServion.sk/webservion.png"
+            },
             timestamp: new Date().toISOString()
           }]
         };
@@ -174,14 +177,17 @@
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
           });
+
           if (res.ok) {
-            responseDiv.innerHTML = "<p class='success'>✅ Objednávka bola úspešne odoslaná! Čoskoro vás budeme kontaktovať 💬</p>";
+            responseDiv.innerHTML =
+              "<p class='success'>✅ Objednávka bola úspešne odoslaná! Čoskoro vás budeme kontaktovať 💬</p>";
             form.reset();
           } else {
             responseDiv.innerHTML = "<p class='error'>❌ Nepodarilo sa odoslať objednávku.</p>";
           }
         } catch (err) {
-          responseDiv.innerHTML = "<p class='error'>⚠️ Chyba pripojenia k serveru.</p>";
+          responseDiv.innerHTML =
+            "<p class='error'>⚠️ Chyba pripojenia k serveru.</p>";
         }
       });
     })();

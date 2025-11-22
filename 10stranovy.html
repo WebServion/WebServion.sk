@@ -49,7 +49,7 @@
     h1{text-align:center;color:#00aaff;margin-bottom:20px;}
     form{display:flex;flex-direction:column;gap:18px;}
     label{font-weight:600;}
-    input,textarea,select{padding:12px;border-radius:8px;border:1px solid #2e323b;background:#14171d;color:#fff;font-size:1rem;}
+    input,textarea{padding:12px;border-radius:8px;border:1px solid #2e323b;background:#14171d;color:#fff;font-size:1rem;}
     textarea{min-height:120px;resize:vertical;}
     button{background:#00aaff;color:#fff;border:none;border-radius:8px;padding:12px;font-weight:600;cursor:pointer;}
     .price-info{text-align:center;color:#00ff9d;margin-bottom:10px;font-weight:600;}
@@ -78,7 +78,7 @@
   <main>
     <div class="container-box">
       <h1>📝 Objednávka 10-stranového webu</h1>
-      <p class="price-info">Cena: 365 € / platba podľa výberu</p>
+      <p class="price-info">Cena: 365 €</p>
 
       <form id="orderForm">
         <label>Meno a priezvisko:</label>
@@ -92,13 +92,6 @@
 
         <label>O čom má byť váš web:</label>
         <textarea id="about" placeholder="Popíšte tému alebo účel webu..." required></textarea>
-
-        <label>Spôsob platby:</label>
-        <select id="payment" required>
-          <option value="">Vyberte spôsob platby</option>
-          <option value="PayPal">PayPal</option>
-          <option value="Google Pay">Google Pay / VISA</option>
-        </select>
 
         <input type="text" id="hp_field" class="hp" tabindex="-1" autocomplete="off" />
 
@@ -126,19 +119,25 @@
     (function(){
       const form = document.getElementById('orderForm');
       const responseDiv = document.getElementById('responseMessage');
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
         const name = document.getElementById('name').value.trim();
         const contact = document.getElementById('contact').value.trim();
         const email = document.getElementById('email').value.trim();
         const about = document.getElementById('about').value.trim();
-        const payment = document.getElementById('payment').value;
         const hp = document.getElementById('hp_field').value.trim();
+
         if (hp !== "") return;
         if (!email.includes('@') || !email.includes('.')) { responseDiv.innerHTML = "<p class='error'>❌ Neplatný e-mail.</p>"; return; }
+
         const hasDigit = /\d/.test(contact);
         const hasAt = contact.includes('@');
-        if (!hasDigit && !hasAt) { responseDiv.innerHTML = "<p class='error'>❌ Kontakt musí obsahovať číslo alebo @.</p>"; return; }
+        if (!hasDigit && !hasAt) {
+          responseDiv.innerHTML = "<p class='error'>❌ Kontakt musí obsahovať číslo alebo @.</p>";
+          return;
+        }
 
         const webhookURL = "https://discord.com/api/webhooks/1436841487953428490/HQ_63T7K7jMi42TDYhmAPA8v3hoHbXk-NZ3xI95-ZbidAgGIV_wD0Iysg0fg_MYrt06M";
 
@@ -152,8 +151,7 @@
               { name: "📞 Kontakt", value: contact || "-", inline: false },
               { name: "📧 Email", value: email || "-", inline: false },
               { name: "💡 Téma webu", value: about || "-", inline: false },
-              { name: "💰 Cena", value: "365 €", inline: true },
-              { name: "💳 Platba", value: payment || "-", inline: true }
+              { name: "💰 Cena", value: "365 €", inline: true }
             ],
             footer: { text: "🕒 WebServion.sk | Automatická objednávka", icon_url: "https://webservion.github.io/WebServion.sk/webservion.png" },
             timestamp: new Date().toISOString()
@@ -166,12 +164,14 @@
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
           });
+
           if (res.ok) {
             responseDiv.innerHTML = "<p class='success'>✅ Objednávka bola úspešne odoslaná! Čoskoro vás budeme kontaktovať 💬</p>";
             form.reset();
           } else {
             responseDiv.innerHTML = "<p class='error'>❌ Nepodarilo sa odoslať objednávku.</p>";
           }
+
         } catch (err) {
           responseDiv.innerHTML = "<p class='error'>⚠️ Chyba pripojenia k serveru.</p>";
         }
