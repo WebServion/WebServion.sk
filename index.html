@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="qgrKtoD0oymcVkUvSbLXaQ7ZaNc1MUFt_2B3E0D7rts">
+
   <!-- 🏷️ Základné SEO -->
   <title>WebServion.sk | Tvorba webových stránok pre firmy</title>
   <meta name="description" content="Tvoríme moderné, rýchle a responzívne webové stránky pre firmy a podnikateľov. WebServion.sk – profesionálny web na mieru už od 200 €.">
@@ -66,18 +69,16 @@
   <meta name="theme-color" content="#00bfa5">
 
   <style>
-    /* ---------- NAVBAR COLORS & MENŠÍ HEADER ---------- */
     .navbar {
       background-color: #1f1f1f;
-      padding: 8px 0; /* menší padding */
-      position: fixed; /* fixovaný na vrchu */
+      padding: 8px 0;
+      position: fixed;
       width: 100%;
       top: 0;
       left: 0;
       z-index: 1000;
-      transition: top 0.3s; /* plynulý pohyb pri scroll */
+      transition: top 0.3s;
     }
-
     .navbar .container {
       display: flex;
       justify-content: space-between;
@@ -86,36 +87,30 @@
       margin: auto;
       padding: 0 20px;
     }
-
     .navbar .logo img {
-      height: 50px; /* mierne menšie logo */
+      height: 50px;
       border-radius: 8px;
     }
-
     .navbar nav ul {
       display: flex;
       list-style: none;
       margin: 0;
       padding: 0;
     }
-
     .navbar nav ul li {
-      margin-left: 20px; /* trošku menšie odsadenie */
+      margin-left: 20px;
     }
-
     .navbar nav ul li a {
-      color: #00bfa5; /* základná zelená farba */
+      color: #00bfa5;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
-
     .navbar nav ul li a:hover,
     .navbar nav ul li a.active {
-      color: #1e90ff; /* jasná modrá pri hover */
+      color: #1e90ff;
     }
 
-    /* ---------- HERO / PAGE HEADER ---------- */
     .hero, .page-header {
       position: relative;
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
@@ -125,7 +120,7 @@
       justify-content: center;
       text-align: center;
       padding: 0 20px;
-      margin-top: 66px; /* offset pre fixovaný header */
+      margin-top: 66px;
     }
 
     .hero .hero-content, .page-header .page-header-content {
@@ -163,12 +158,10 @@
 <body>
   <header class="navbar" id="navbar">
     <div class="container">
-      <!-- Logo vľavo -->
       <div class="logo">
         <img src="webservion.png" alt="WebServion Logo">
       </div>
 
-      <!-- Menu vpravo -->
       <nav>
         <ul>
           <li><a href="index.html">Domov</a></li>
@@ -202,10 +195,12 @@
 
       <h3>🧰 Full servis & údržba webu:</h3>
       <p>🔧 Tvoj web sa nikdy „nepokazí“ – všetko opravíme, aktualizujeme a udržíme funkčné. Vyplň krátky dotazník, nezabudni na kontakt, kde ti napíšem.</p>
+
       <ul>
         <li>💸 <strong>5-stranový web:</strong> 150 – 350 €/mesiac</li>
         <li>💸 <strong>10-stranový web:</strong> 480 – 585 €/mesiac</li>
       </ul>
+
       <p>💵 <strong>Možnosť dohody na rozumnej cene 💳!</strong></p>
 
       <h3>✍️ Chceš svoj web ešte dnes?</h3>
@@ -223,7 +218,6 @@
   </footer>
 
   <script>
-    // Header mizne pri scroll nadol a zobrazuje sa pri scroll nahor
     let prevScrollpos = window.pageYOffset;
     const navbar = document.getElementById("navbar");
 
@@ -232,7 +226,7 @@
       if (prevScrollpos > currentScrollPos) {
         navbar.style.top = "0";
       } else {
-        navbar.style.top = "-70px"; // schová hlavičku pri scroll nadol
+        navbar.style.top = "-70px";
       }
       prevScrollpos = currentScrollPos;
     }
